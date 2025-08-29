@@ -9,6 +9,9 @@ You can test this out with TryHackme's challenge `Pyrat`.
 - Shows remote cwd in the prompt
 - Command history with arrow keys. Stored in `~/.pyrepl_history`
 - Send raw Python with `:raw ...`
+- **Transfers files**:
+  - `get <remote> [local]` -> downloads a file
+  - `:put <local> [remote]` -> uploads a file
 - Quit with `exit`, `quit` or basic `ctrl + c`
 
 ## Usage
@@ -28,6 +31,13 @@ drwxr-x---  5 think  think  4096 Jun 21  2023 think
 drwxr-xr-x  3 ubuntu ubuntu 4096 Aug 29 11:34 ubuntu
 /home/ubuntu$ cd /tmp
 /tmp$
+
+/tmp$ :get /etc/passwd
+Downloaded xx bytes -> passwd
+
+/tmp$ :put shell.sh /tmp/shell.sh
+Uploaded xx bytes -> /tmp/shell.sh
+
 ```
 
 ## Disclamer
